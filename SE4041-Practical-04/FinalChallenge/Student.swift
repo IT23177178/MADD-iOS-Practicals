@@ -1,0 +1,26 @@
+// Name: W P R Senara
+// Student ID: IT23177178
+// Module: SE4041 - Mobile Application Design and Development
+// Practical_04 - FinalChallenge/Student.swift
+
+import Foundation
+struct Student: Identifiable {
+    let id = UUID()
+    var name: String
+    var mark: Int
+    var passed: Bool { mark >= 50 }
+    // Additional challenge: computed grade
+    var grade: String {
+        switch mark {
+        case 80...100: return "A"
+        case 75..<80: return "A-"
+        case 70..<75: return "B+"
+        case 65..<70: return "B"
+        case 60..<65: return "B-"
+        case 55..<60: return "C+"
+        case 45..<55: return "C"
+        case 40..<45: return "C-"
+        default: return "F"
+        }
+    }
+}
